@@ -1,4 +1,4 @@
-# Secrets
+# --- Secrets -----------------------------------------------------------
 .env
 .env.*
 !.env.example
@@ -6,22 +6,26 @@
 *.key
 secrets.json
 
-# Python
+# --- Python ------------------------------------------------------------
 __pycache__/
 *.py[cod]
+*$py.class
 *.so
-*.egg-info/
 .Python
 build/
 dist/
+*.egg-info/
+.eggs/
+.installed.cfg
 
-# Virtual environments
+# --- Virtual environments ----------------------------------------------
 .venv/
 venv/
 env/
 ENV/
+.python-version
 
-# Tests and coverage
+# --- Test / coverage ---------------------------------------------------
 .pytest_cache/
 .coverage
 .coverage.*
@@ -30,14 +34,16 @@ htmlcov/
 .ruff_cache/
 .mypy_cache/
 
-# Regenerable data and indexes
+# --- Regenerable artefacts ---------------------------------------------
+# The vector index and the SQLite metadata store are both rebuilt from the
+# synthetic corpus on first run, so they are never committed.
 data/index/
 data/*.sqlite3
 data/*.sqlite3-wal
 data/*.sqlite3-shm
 data/synthetic/
 
-# Editors / OS
+# --- Editors / OS ------------------------------------------------------
 .vscode/
 .idea/
 .DS_Store

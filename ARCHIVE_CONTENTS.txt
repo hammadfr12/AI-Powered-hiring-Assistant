@@ -1,0 +1,19 @@
+AI-Powered Hiring Assistant — archive built 2026-10-10T21:02:58+00:00
+
+Files included: 67
+
+Excluded by design:
+  - virtual environments, caches and build artefacts
+  - .env and any secret-bearing file
+  - data/index (vector index — rebuild with: make index)
+  - data/synthetic (demo corpus — rebuild with: make corpus)
+  - data/*.sqlite3 (metadata store — rebuilt on first run)
+
+To recreate everything from a clean checkout:
+  make install      # create .venv and install dependencies
+  make corpus       # regenerate the synthetic demo corpus
+  make index        # build the vector index
+  make run          # launch the app
+
+The app also builds the corpus and index automatically on first launch,
+so `make install && make run` is sufficient.
